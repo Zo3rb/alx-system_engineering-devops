@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod 722 hello
+sudo chmod 744 hello
