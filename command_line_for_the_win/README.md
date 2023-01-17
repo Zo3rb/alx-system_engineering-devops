@@ -10,10 +10,13 @@
 
 ### 0. First 九 tasks
 Complete the first 9 tasks.
+[First 9](./0-first_9_tasks.png)
 
 ### ### 1. Reach חי completed tasks
 Complete the 9 next tasks, getting to 18 total.
+[Next 9](./1-next_9_tasks.png)
 
 ### 2. Reach the perfect cube, 27
 Complete the 9 next tasks, getting to 27 total.
+[Second Next 9](./2-next_9_tasks.png)
 </div>
