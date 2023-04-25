@@ -12,7 +12,7 @@ API_URL = "https://jsonplaceholder.typicode.com/"
 if __name__ == "__main__":
     user = requests.get(API_URL + "users/{}".format(sys.argv[1])).json()
     todos = requests.get(API_URL + "users/{}/todos".format(sys.argv[1])).json()
-    completed = [todo for todo in todos if todo["completed"] is True]
+    completed = [todo for todo in todos if todo.get("completed") is True]
 
     print("Employee {} is done with tasks({}/{}):".format(user.get("name"),
           len(completed), len(todos)))
