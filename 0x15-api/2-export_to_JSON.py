@@ -12,5 +12,5 @@ if __name__ == "__main__":
     todos = requests.get(API_URL + "users/{}/todos".format(sys.argv[1])).json()
 
     with open("{}.json".format(user.get("id")), "w") as file:
-        json.dump({sys.argv[1]: [{"task": todo.get("title"), "completed": todo.get("completed"), "username": user.get("username")} for todo in todos]}, file)
-
+        json.dump({sys.argv[1]: [{"task": todo.get("title"), "completed": todo.get(
+            "completed"), "username": user.get("username")} for todo in todos]}, file)
