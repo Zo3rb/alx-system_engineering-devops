@@ -1,0 +1,23 @@
+global
+        log /dev/log    local0
+	stats socket /run/haproxy/admin.sock mode 660 level admin
+
+defaults
+        log     global
+        mode    http
+        option  httplog
+	timeout connect  10s
+	timeout client  30s
+	timeout server  30s
+
+frontend Github/Zo3rb.tech.frontend
+	bind *:80
+	bind *:443 ssl crt /etc/haproxy/certs/Zo3rb.tech.pem
+	http-request redirect scheme https code 301 unless { ssl_fc }
+	http-request set-header X-Forwarded-Proto https
+	default_backend Zo3rb-tech-backend
+
+backend Zo3rb-tech-backend
+	balance roundrobin
+	server 122760-web-01 107.23.6.30:80 check
+	server 122760-web-02 34.207.61.1:80 check
