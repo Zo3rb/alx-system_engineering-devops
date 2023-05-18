@@ -1,0 +1,12 @@
+#!/bin/bash
+
+MASTER_PID=$(ps aux | grep '[g]unicorn: master' | awk '{print $2}')
+
+if [ -z "$MASTER_PID" ]; then
+    echo "Gunicorn master process not found."
+    exit 1
+fi
+
+kill -s HUP $MASTER_PID
+
+echo "Reloaded Gunicorn gracefully."
