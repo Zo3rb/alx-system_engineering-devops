@@ -1,4 +1,4 @@
-f high amount of requests
+#f high amount of requests
 
 exec {'replace':
   provider => shell,
